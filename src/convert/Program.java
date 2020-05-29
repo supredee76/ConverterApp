@@ -15,7 +15,8 @@ class Program {
     while(true){
       String[] input = sc.nextLine().split("\\s");
 
-      if(input.length == 1){        if(input[0].equals("e")){
+      if(input.length == 1){
+        if(input[0].equals("e")){
           break; 
         } else if(input[0].equals("h")){
           printOptions();
@@ -38,6 +39,9 @@ class Program {
     sc.close();
   }
   
+  /**
+   * This function call conversion util and format the result for output
+   */
   private static void printResult(double n, String from, String to){
     from = from.toUpperCase();
     to = to.toUpperCase();
@@ -50,22 +54,34 @@ class Program {
     
   }
   
+  /**
+   * Header text UI
+   */
   private static void printHeader(){
     System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     System.out.println("XXXXXXXXXXXXXXXXX Welcome to Unit Of Measurment (UOM) Converter XXXXXXXXXXXXXXXXXXX");
     System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n");
   }
   
+  /**
+   * Print available options
+   */
   private static void printOptions(){    
     System.out.println("Length: Centimeter[CM] Inch[IN] Foot[FT] Yard[YD]");
     System.out.println("Weight: Kilogram[KG] Pound[LB]");
     System.out.println("Liquid: Liter[L] Gallon[G] Pound[LB]\n");  
   }
 
+  /**
+   * Print error message
+   */
   private static void printDisclaimer(){
     System.out.println("Invalid query. Check your format and/or unit code and try again.");
   }
 
+  /**
+   * Print ready message prompt
+   */
   private static void printReady(){
     System.out.println("You can enter conversion query following this format. (or enter Help[h], Exit[e])");
     System.out.println("     [quantity] [source units type] [desire unit type]\n");
